@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script type="module" src="js/app.js"></script>
+    <title>Music Streaming Platform Analytics - Level 3</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>🎵 Music Streaming Platform Analytics 🎵</h1>
+      <p class="subtitle">
+        Advanced Array Operations & Data Analysis Challenge
+      </p>
+
+      <div class="info-box">
+        <h3>📊 Scenario</h3>
+        <p>
+          You are a data analyst at <strong>StreamBeats</strong>, a popular
+          music streaming platform. The platform has collected user listening
+          data across different artists, and your job is to analyze trends,
+          identify top performers, and provide insights for playlist curation
+          and artist promotions.
+        </p>
+        <p>
+          <strong>Your mission:</strong> Use advanced JavaScript array methods
+          (map, filter, reduce) to transform, analyze, and extract meaningful
+          insights from the listening data.
+        </p>
+      </div>
+
+      <div class="warning-box">
+        <h3>⚠️ Important Instructions</h3>
+        <p>
+          <strong>1.</strong> Create a separate JavaScript file named
+          <code>solutions.js</code>
+        </p>
+        <p>
+          <strong>2.</strong> Link it at the bottom of this HTML file:
+          <code>&lt;script src="solutions.js"&gt;&lt;/script&gt;</code>
+        </p>
+        <p>
+          <strong>3.</strong> Use the provided <code>listeningData</code> array
+          (included in this file)
+        </p>
+        <p>
+          <strong>4.</strong> Display your results in the answer boxes by
+          updating the innerHTML
+        </p>
+        <p>
+          <strong>5.</strong> You must use <code>map()</code>,
+          <code>filter()</code>, and/or <code>reduce()</code> - NO regular
+          loops!
+        </p>
+      </div>
+
+      <!-- Task 1 -->
+      <h2>Task 1: Multi-Tier Artist Categorization</h2>
+      <div class="task-description">
+        <p>
+          <strong>Objective:</strong> Categorize artists into performance tiers
+          based on their total streams.
+        </p>
+        <p><strong>Requirements:</strong></p>
+        <p>
+          • First, calculate the <strong>total streams</strong> for each artist
+          (sum of all their songs)
+        </p>
+        <p>• Then categorize each artist into tiers:</p>
+        <p>
+          &nbsp;&nbsp;&nbsp;- <strong>Platinum</strong>: Total streams ≥
+          10,000,000
+        </p>
+        <p>
+          &nbsp;&nbsp;&nbsp;- <strong>Gold</strong>: Total streams ≥ 5,000,000
+          and &lt; 10,000,000
+        </p>
+        <p>
+          &nbsp;&nbsp;&nbsp;- <strong>Silver</strong>: Total streams &lt;
+          5,000,000
+        </p>
+        <p>
+          <strong>Output Format:</strong> An array of objects with
+          <code>{ artist, totalStreams, tier }</code>
+        </p>
+        <p>
+          <strong>Hint:</strong> Use reduce() to sum streams, then map() to add
+          tier information
+        </p>
+      </div>
+      <p id="task1Answer" class="answer-box">// Your answer will appear here</p>
+
+      <!-- Task 2 -->
+      <h2>Task 2: Genre Performance Metrics with Engagement Score</h2>
+      <div class="task-description">
+        <p>
+          <strong>Objective:</strong> Calculate comprehensive performance
+          metrics for each genre with a custom engagement score.
+        </p>
+        <p><strong>Requirements:</strong></p>
+        <p>• Group songs by genre</p>
+        <p>• For each genre, calculate:</p>
+        <p>&nbsp;&nbsp;&nbsp;- Average streams</p>
+        <p>&nbsp;&nbsp;&nbsp;- Average rating</p>
+        <p>&nbsp;&nbsp;&nbsp;- Song count</p>
+        <p>
+          &nbsp;&nbsp;&nbsp;- <strong>Engagement Score</strong> = (avgStreams /
+          1,000,000) × avgRating
+        </p>
+        <p>
+          <strong>Output Format:</strong> An object where keys are genres and
+          values contain the metrics
+        </p>
+        <p>
+          <strong>Hint:</strong> Use reduce() to group and calculate, round
+          engagement score to 2 decimals
+        </p>
+      </div>
+      <p id="task2Answer" class="answer-box">// Your answer will appear here</p>
+
+      <!-- Task 3 -->
+      <h2>Task 3: Peak Performance Window Analysis</h2>
+      <div class="task-description">
+        <p>
+          <strong>Objective:</strong> Identify consecutive 4-song windows with
+          the highest combined engagement.
+        </p>
+        <p><strong>Requirements:</strong></p>
+        <p>• Calculate a sliding window of 4 consecutive songs</p>
+        <p>• For each window, sum: (streams / 1000) + (rating × 500)</p>
+        <p>• Find the window with the maximum total score</p>
+        <p>
+          • Return an object with:
+          <code>{ startIndex, endIndex, songs, totalScore }</code>
+        </p>
+        <p>
+          &nbsp;&nbsp;&nbsp;- <code>songs</code> should be an array of the 4
+          song titles in that window
+        </p>
+        <p>
+          <strong>Hint:</strong> Loop through array indices, calculate score for
+          each 4-song window
+        </p>
+      </div>
+      <p id="task3Answer" class="answer-box">// Your answer will appear here</p>
+
+      <!-- Task 4 -->
+      <h2>Task 4: Cross-Genre Artist Diversity Analysis</h2>
+      <div class="task-description">
+        <p>
+          <strong>Objective:</strong> Identify which artists have the most genre
+          diversity and their performance across genres.
+        </p>
+        <p><strong>Requirements:</strong></p>
+        <p>
+          • Find artists who have songs in
+          <strong>3 or more different genres</strong>
+        </p>
+        <p>• For each qualifying artist, calculate:</p>
+        <p>&nbsp;&nbsp;&nbsp;- List of unique genres they produce</p>
+        <p>&nbsp;&nbsp;&nbsp;- Average streams per genre</p>
+        <p>
+          &nbsp;&nbsp;&nbsp;- Their best-performing genre (highest average
+          streams)
+        </p>
+        <p>
+          <strong>Output Format:</strong> Array of objects with
+          <code
+            >{ artist, genres, genreCount, bestGenre, bestGenreAvgStreams
+            }</code
+          >
+        </p>
+        <p>
+          <strong>Hint:</strong> Use reduce() to group by artist and genre, then
+          filter and transform
+        </p>
+      </div>
+      <p id="task4Answer" class="answer-box">// Your answer will appear here</p>
+
+      <!-- Task 5 -->
+      <h2>Task 5: Premium Playlist Curation Algorithm</h2>
+      <div class="task-description">
+        <p>
+          <strong>Objective:</strong> Create an optimized playlist based on
+          multiple quality criteria.
+        </p>
+        <p><strong>Requirements:</strong></p>
+        <p>• Filter songs that meet ALL these criteria:</p>
+        <p>&nbsp;&nbsp;&nbsp;- Rating ≥ 4.3</p>
+        <p>&nbsp;&nbsp;&nbsp;- Streams ≥ 2,000,000</p>
+        <p>
+          &nbsp;&nbsp;&nbsp;- Duration between 180-240 seconds (3-4 minutes)
+        </p>
+        <p>
+          • Sort the filtered songs by a
+          <strong>Quality Score</strong> (descending):
+        </p>
+        <p>
+          &nbsp;&nbsp;&nbsp;- Quality Score = (rating × 2) + (streams / 500000)
+        </p>
+        <p>• Return the <strong>top 10</strong> songs</p>
+        <p>
+          <strong>Output Format:</strong> Array of objects with
+          <code>{ title, artist, qualityScore }</code>
+        </p>
+        <p>
+          <strong>Hint:</strong> Chain filter(), map() to add qualityScore,
+          sort(), and slice()
+        </p>
+      </div>
+      <p id="task5Answer" class="answer-box">// Your answer will appear here</p>
+
+      <div class="footer">
+        <p>
+          <strong>StreamBeats Analytics Dashboard</strong> | Advanced JavaScript
+          Array Operations
+        </p>
+        <p>
+          Remember: Think functionally, chain methods, and avoid traditional
+          loops!
+        </p>
+      </div>
+    </div>
+    <!-- Link to student's solution file -->
+    <!-- <script src="solutions.js"></script> -->
+  </body>
+</html>
